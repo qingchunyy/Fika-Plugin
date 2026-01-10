@@ -19,7 +19,7 @@ public class ChangeGameModeButton_Patch : ModulePatch
         GameObject ____availableState)
     {
         ____buttonLabel.text = "PvE";
-        ____buttonDescription.text = $"Fika will always be {ColorizeText(EColor.BLUE, "PvE")}";
+        ____buttonDescription.text = $"青春服务器 {ColorizeText(EColor.BLUE, "2.1")}";
         ____buttonDescriptionIcon.gameObject.SetActive(false);
         ____availableState.SetActive(true);
         return false;
