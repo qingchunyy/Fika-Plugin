@@ -149,9 +149,9 @@ public static class FikaUIGlobals
         ui.AddDisposable(errorScreenHandler.method_0);
         var text = buttonType switch
         {
-            ErrorScreen.EButtonType.OkButton => "I UNDERSTAND",
-            ErrorScreen.EButtonType.CancelButton => "CANCEL",
-            ErrorScreen.EButtonType.QuitButton => "I DECLINE",
+            ErrorScreen.EButtonType.OkButton => "确定",
+            ErrorScreen.EButtonType.CancelButton => "取消",
+            ErrorScreen.EButtonType.QuitButton => "拒绝",
             _ => throw new ArgumentOutOfRangeException()
         };
 
