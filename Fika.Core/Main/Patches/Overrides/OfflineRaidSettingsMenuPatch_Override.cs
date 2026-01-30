@@ -79,15 +79,15 @@ public class OfflineRaidSettingsMenuPatch_Override : ModulePatch
         labelList.Clear();
         labelList.Add(new()
         {
-            Label = "Together",
+            Label = "相同",
             Enabled = true
         });
         labelList.Add(new()
         {
-            Label = "Random",
+            Label = "随机",
             Enabled = true
         });
-        ____playersSpawnPlaceDropdown.SetTextInternal("Together");
+        ____playersSpawnPlaceDropdown.SetTextInternal("相同");
 
         instance = __instance;
 
@@ -127,7 +127,7 @@ public class OfflineRaidSettingsMenuPatch_Override : ModulePatch
                 CustomTextMeshProUGUI customTmp = weatherToggle.GetComponentInChildren<CustomTextMeshProUGUI>();
                 if (customTmp != null)
                 {
-                    customTmp.SetText("Use custom weather");
+                    customTmp.SetText("使用自定义天气");
                 }
             }
         }
