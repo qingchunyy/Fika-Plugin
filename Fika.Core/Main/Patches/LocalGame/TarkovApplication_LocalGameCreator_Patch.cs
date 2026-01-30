@@ -150,14 +150,14 @@ public class TarkovApplication_LocalGameCreator_Patch : ModulePatch
 
         if (!isServer)
         {
-            instance.MatchmakerPlayerControllerClass.UpdateMatchingStatus("Joining coop game...");
+            instance.MatchmakerPlayerControllerClass.UpdateMatchingStatus("正在加入合作游戏...");
 
             RaidSettingsRequest data = new();
             var raidSettingsResponse = await FikaRequestHandler.GetRaidSettings(data);
 
             if (!raidSettingsResponse.Received)
             {
-                throw new InvalidDataException("Failed to retrieve raid settings");
+                throw new InvalidDataException("获取战局设置失败");
             }
 
             raidSettings.MetabolismDisabled = raidSettingsResponse.MetabolismDisabled;
@@ -167,7 +167,7 @@ public class TarkovApplication_LocalGameCreator_Patch : ModulePatch
         }
         else
         {
-            instance.MatchmakerPlayerControllerClass.UpdateMatchingStatus("Hosting coop game...");
+            instance.MatchmakerPlayerControllerClass.UpdateMatchingStatus("正在创建合作游戏...");
             Singleton<FikaServer>.Instance.LocationReceived = true;
         }
 
@@ -198,11 +198,11 @@ public class TarkovApplication_LocalGameCreator_Patch : ModulePatch
         ScreenUpdater updater = new(instance.MatchmakerPlayerControllerClass, coopGame);
         if (!isServer)
         {
-            coopGame.SetMatchmakerStatus("Coop game joined");
+            coopGame.SetMatchmakerStatus("已加入合作游戏");
         }
         else
         {
-            coopGame.SetMatchmakerStatus("Coop game created");
+            coopGame.SetMatchmakerStatus("已创建合作游戏");
         }
 
         await coopGame.InitPlayer(raidSettings.BotSettings);
