@@ -128,7 +128,7 @@ public class FikaModHandler
 
     private void ShowModErrorMessage()
     {
-        const string message = "Your client doesn't meet server requirements, check logs for more details";
+        const string message = "您的客户端不符合服务器要求，请查看日志了解详情";
 
         // -1f time makes the message permanent
         var errorScreen = Singleton<PreloaderUI>.Instance.ShowCriticalErrorScreen("INSTALLATION ERROR", message,
